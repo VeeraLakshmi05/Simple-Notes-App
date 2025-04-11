@@ -17,4 +17,4 @@ Minimal UI with quick performance.
 •HTML(Requests module)
 •Inline CSS
 ## Sample Output 
-![App Output Screenshot]()
+![App Output Screenshot](sample output.png)
