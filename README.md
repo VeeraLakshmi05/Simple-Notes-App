@@ -17,4 +17,4 @@ Minimal UI with quick performance.
 •HTML(Requests module)
 •Inline CSS
 ## Sample Output 
-![App Output Screenshot](sample output.png)
+![App Output Screenshot](https://github.com/VeeraLakshmi05/Simple-Notes-App/blob/main/sample%20output.png?raw=true)
