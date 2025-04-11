@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Notes App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        textarea {
+            height: 100px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f4f4f4;
+            margin: 5px;
+            padding: 10px;
+            position: relative;
+        }
+        .edit-btn, .delete-btn {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            cursor: pointer;
+            background: #ff6961;
+            color: white;
+            border: none;
+            padding: 3px 6px;
+            margin-left: 5px;
+        }
+        .edit-btn {
+            background: #fdb44b;
+            right: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simple Notes App</h2>
+    <input type="text" id="noteTitle" placeholder="Title" required>
+    <textarea id="noteContent" placeholder="Write your note here..." required></textarea>
+    <button onclick="addNote()">Add Note</button>
+    <ul id="notesList"></ul>
+    
+    <script>
+        function addNote() {
+            let title = document.getElementById('noteTitle').value;
+            let content = document.getElementById('noteContent').value;
+            if (title && content) {
+                let noteItem = document.createElement('li');
+                noteItem.innerHTML = `<strong class="note-title">${title}</strong><br><span class="note-content">${content}</span>`;
+                
+                let editBtn = document.createElement('button');
+                editBtn.innerText = 'Edit';
+                editBtn.className = 'edit-btn';
+                editBtn.onclick = function() { editNote(noteItem); };
+                
+                let deleteBtn = document.createElement('button');
+                deleteBtn.innerText = 'Delete';
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.onclick = function() { noteItem.remove(); };
+                
+                noteItem.appendChild(editBtn);
+                noteItem.appendChild(deleteBtn);
+                document.getElementById('notesList').appendChild(noteItem);
+                
+                document.getElementById('noteTitle').value = '';
+                document.getElementById('noteContent').value = '';
+            } else {
+                alert("Title and Content cannot be empty!");
+            }
+        }
+        
+        function editNote(noteItem) {
+            let titleElement = noteItem.querySelector('.note-title');
+            let contentElement = noteItem.querySelector('.note-content');
+            
+            let newTitle;
+            do {
+                newTitle = prompt("Edit Title (Title is required):", titleElement.innerText);
+            } while (!newTitle);
+            
+            let newContent;
+            do {
+                newContent = prompt("Edit Content (Content is required):", contentElement.innerText);
+            } while (!newContent);
+            
+            titleElement.innerText = newTitle;
+            contentElement.innerText = newContent;
+        }
+    </script>
+</body>
+</html>
