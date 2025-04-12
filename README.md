@@ -14,7 +14,7 @@ Minimal UI with quick performance.
 5.All actions happen in the browser — no backend or storage used.  
 6.Built with HTML, CSS, and vanilla JavaScript.  
 ## 🛠️ Built With
-•HTML(Requests module)
+•HTML(Requests module)  
 •Inline CSS
 ## Sample Output 
 ![App Output Screenshot](https://github.com/VeeraLakshmi05/Simple-Notes-App/blob/main/sample%20output.png?raw=true)
