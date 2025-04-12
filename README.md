@@ -7,7 +7,7 @@ Quickly add and save text-based notes.
 Update or remove notes anytime.
 Minimal UI with quick performance.
 ## How it works
-1.Enter a title and content, then click "Add Note" to create a note.
+1.Enter a title and content, then click "Add Note" to create a note.␣␣
 2.Notes appear in a list below with Edit and Delete buttons.
 3.Edit opens a prompt to change the title and content.
 4.Delete removes the note from the list.
